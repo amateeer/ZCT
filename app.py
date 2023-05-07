@@ -1,5 +1,11 @@
 from flask import Flask, request
 from pymongo import MongoClient
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
+
+# Zvyšok vášho kódu (definícia API
 
 # Pripojenie k MongoDB Atlas
 connection_string = 'mongodb+srv://zctzadanie:zadanie@zadanie.twkwmzm.mongodb.net/?retryWrites=true&w=majority'
@@ -9,7 +15,6 @@ client = MongoClient(connection_string)
 db = client['zadanie']
 tasks_collection = db['task']
 
-app = Flask(__name__)
 
 # Pridajte úlohu do databázy
 def add_task_to_db(task_name, task_desc):
