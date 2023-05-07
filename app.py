@@ -1,10 +1,9 @@
 from flask import Flask, request
 from google.cloud import firestore
-from google.cloud import firestore
-from google.oauth2 import service_account
+from google.auth import credentials
 
-# inicializujte klienta Firestore s použitím vášho vlastného projektu a kľúča pre službu
-cred = service_account.Credentials.from_service_account_file('zct1-385912-c6a1e78d96c4.json')
+# Načítanie poverení zo súboru s kľúčom pre službu
+cred = credentials.Certificate('zct1-385912-c6a1e78d96c4.json')
 db = firestore.Client(credentials=cred, project='zct1-385912')
 
 app = Flask(__name__)
