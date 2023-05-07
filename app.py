@@ -5,7 +5,7 @@ from google.auth import credentials
 # Načítanie poverení zo súboru s kľúčom pre službu
 cred = credentials.Certificate('zct1-385912-c6a1e78d96c4.json')
 db = firestore.Client(credentials=cred, project='zct1-385912')
-
+#
 app = Flask(__name__)
 
 db = firestore.Client()
