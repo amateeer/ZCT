@@ -1,4 +1,3 @@
-pip install --upgrade pip
 from flask import Flask, request
 from google.cloud import firestore
 from google.cloud import firestore
